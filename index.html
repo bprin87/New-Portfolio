@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben Prince - Front-end Developer</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-menu-container container">
+                <div class="site-logo">
+                    <a href="">Ben Prince</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+                <div class="website-enquiry">
+                    <a href="#enquiry">Website Enquiry</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        
+        <section class="hero container">
+            <div class="hero-heading">
+                <h1>Simple, Clean, Responsive.</h1>
+                <h2>Helping you build a website that works everywhere.</h2>
+                <a href="#project-enquiry" class="open-modal">Start a project enquiry</a>
+            </div>
+        </section>
+       
+    
+
+        <section id="work" class="work container">
+            <div class="section-container">
+                <h2>Featured Work & Projects</h2>
+                <div class="scroll-container">
+                    <ul class="card-container">
+                        <li>
+                            <div class="card" data-modal="shopify-modal">
+                                <div class="card-image-container">
+                                    <img src="./images/cards/shopify.png" alt="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card" data-modal="i-do-events-modal">
+                                <div class="card-image-container">
+                                    <img src="./images/cards/i-do-events.png" alt="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card" data-modal="space-blasters-modal">
+                                <div class="card-image-container">
+                                    <img src="./images/cards/space-blasters.png" alt="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card" data-modal="eha-modal">
+                                <div class="card-image-container">
+                                    <img src="./images/cards/EHA.png" alt="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card" data-modal="times-table-modal">
+                                <div class="card-image-container">
+                                    <img src="./images/cards/times-table.png" alt="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="scroll-buttons">
+                    <button class="scroll-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                          </svg>
+                    </button>
+                    <button class="scroll-right">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                          </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>

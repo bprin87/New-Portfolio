@@ -1,0 +1,149 @@
+:root {
+    --primary-color: #000;
+    --button-link-color:#0071e3;
+    --linear-gradient: linear-gradient(90deg, #0A84FF, #5E5CE6, #FF375F, #FF9F0A);
+}
+
+html {
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    color: initial;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ============
+    Navigation
+============ */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    backdrop-filter: blur(20px);
+}
+
+.nav-menu-container {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.site-logo {
+    padding: 8px 16px 8px 0;
+    margin-right: 20px
+}
+
+.nav-menu {
+    display: flex;
+    margin-left: auto;
+}
+
+.nav-menu li {
+    padding: 8px 10px;
+    margin-right: 20px;
+}
+
+.website-enquiry {
+    padding: 8px 0 8px 16px;
+}
+
+.website-enquiry a {
+    font-weight: 400;
+    color: var(--button-link-color);
+    border: 1px solid var(--button-link-color);
+    padding: 7px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease-in-out;
+} 
+
+.website-enquiry a:hover {
+    background-color:  var(--button-link-color);
+    color: #fff;
+}
+
+/* ============
+    Hero
+============ */
+
+.hero {
+    height: 100vh;
+    min-height: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 70px;
+}
+
+.hero-heading {
+    max-width: 750px;
+    min-height: 400px;
+    line-height: 1;
+    margin: 60px auto;
+}
+
+.hero-heading h1 {
+    font-size: 4rem;
+    padding-bottom: 10px;
+    background: var(--linear-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-heading h2, .hero-heading a {
+
+}
+
+.work {
+    height: 100vh;
+}
+
+
+
+
+/* ============
+   Larger Screens
+============ */
+
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 1069px) {}
+
+@media only screen and (min-width: 1440px) and (min-height: 1080px) {}
+
+@media only screen and (min-width: 2201px) and (min-height: 1080px) {}
