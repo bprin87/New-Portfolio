@@ -1,7 +1,5 @@
 :root {
-    --primary-color: #000;
-    --button-link-color:#0071e3;
-    --linear-gradient: linear-gradient(90deg, #0A84FF, #5E5CE6, #FF375F, #FF9F0A);
+   
 }
 
 html {
@@ -19,6 +17,14 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 150px;   
 }
 
 ul {
@@ -34,11 +40,6 @@ a:visited {
     color: initial;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
 /* ============
     Navigation
@@ -49,23 +50,32 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
+    height: 70px;
+    padding: 20px 0;
     z-index: 100;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
 }
 
 .nav-menu-container {
     display: flex;
     align-items: center;
-    padding: 20px 0;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1500px;
 }
 
 .site-logo {
     padding: 8px 16px 8px 0;
-    margin-right: 20px
+    margin-right: 20px;
+}
+
+.site-logo a {
+   
 }
 
 .nav-menu {
     display: flex;
+    justify-content: center;
     margin-left: auto;
 }
 
@@ -74,58 +84,94 @@ nav {
     margin-right: 20px;
 }
 
+.nav-menu li a {
+    
+}
+
 .website-enquiry {
-    padding: 8px 0 8px 16px;
+    padding: 0 0 0 16px;
+    position: relative;
+    display: flex;
+    overflow: hidden;
 }
 
 .website-enquiry a {
     font-weight: 400;
-    color: var(--button-link-color);
-    border: 1px solid var(--button-link-color);
     padding: 7px 10px;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease-in-out;
-} 
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px; 
+    width: 130px; 
+    overflow: hidden;
+}
+
+.website-enquiry span {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.website-enquiry .default-text {
+    transform: translateY(0);
+}
+
+.website-enquiry .hover-text {
+    transform: translateY(150%);
+}
+
+.website-enquiry a:hover .default-text {
+    transform: translateY(-150%);
+}
+
+.website-enquiry a:hover .hover-text {
+    transform: translateY(0);
+}
 
 .website-enquiry a:hover {
-    background-color:  var(--button-link-color);
-    color: #fff;
+    
 }
 
 /* ============
     Hero
 ============ */
-
 .hero {
-    height: 100vh;
-    min-height: 580px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 70px;
+    align-items: flex-start;
+    min-height: 100vh;
 }
 
-.hero-heading {
-    max-width: 750px;
-    min-height: 400px;
-    line-height: 1;
-    margin: 60px auto;
+.hero h1 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    margin-left: 5px;
 }
 
-.hero-heading h1 {
+.hero h2 {
+}
+
+.hero h2, .hero h3 {
     font-size: 4rem;
-    padding-bottom: 10px;
-    background: var(--linear-gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
-.hero-heading h2, .hero-heading a {
+.hero h3 {
+    margin: 5px 0 0 4px;
+}
 
+.hero p {
+    margin-top: 20px;
+    max-width: 500px;
+}
+
+.hero a {
+    margin-top: 50px;
 }
 
 .work {
