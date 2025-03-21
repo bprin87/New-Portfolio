@@ -13,7 +13,7 @@
         <nav>
             <div class="nav-menu-container">
                 <div class="site-logo">
-                    <a href="">Ben Prince</a>
+                    <a href="#"><img src="./images/logo/logo-white.svg" alt="logo image"></a>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#work">Work</a></li>
@@ -21,7 +21,7 @@
                     <li><a href="#about">About</a></li>
                 </ul>
                 <div class="website-enquiry">
-                    <button>Website Enquiry</button>
+                    <button class="open-modal">Website Enquiry</button>
                 </div>
             </div>
         </nav>
@@ -34,83 +34,54 @@
             <h3>I'm a Front-end Developer.</h3>
             <p>Based in the North West of England, I specialise in responsive design with a mobile-first approach, 
                 bringing designs to life on the web, ensuring seamless user experiences across all devices.</p>
-            <button>Start a website enquiry</button>
+            <button class="open-modal">Start a website enquiry</button>
         </section>
        
-        <section id="work" class="work container">
-            <div class="section-container">
-                <h2>Featured Work & Projects</h2>
-                <div class="scroll-container">
-                    <ul class="card-container">
-                        <li>
-                            <div class="card" data-modal="shopify-modal">
-                                <div class="card-image-container">
-                                    <img src="./images/cards/shopify.png" alt="">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card" data-modal="i-do-events-modal">
-                                <div class="card-image-container">
-                                    <img src="./images/cards/i-do-events.png" alt="">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card" data-modal="space-blasters-modal">
-                                <div class="card-image-container">
-                                    <img src="./images/cards/space-blasters.png" alt="">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card" data-modal="eha-modal">
-                                <div class="card-image-container">
-                                    <img src="./images/cards/EHA.png" alt="">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card" data-modal="times-table-modal">
-                                <div class="card-image-container">
-                                    <img src="./images/cards/times-table.png" alt="">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="scroll-buttons">
-                    <button class="scroll-left">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
-                          </svg>
-                    </button>
-                    <button class="scroll-right">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
-                          </svg>
-                    </button>
-                </div>
-            </div>
-        </section>
+        
 
         
     </main>
     <footer></footer>
+
+    <!-- Enquiry Modal -->
+
+    <div class="modal-background">
+        <div id="enquiry-modal" class="enquiry-modal">
+            <div class="enquiry-modal-content">
+                <span class="close-enquiry-modal"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                    </svg>
+                </span>
+                <form action="project-enquiry.php" method="post">
+                    <ul>
+                        <li class="form-name">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" pattern="[A-Za-z\s]+" required>
+                        </li>
+                        <li class="form-company">
+                            <label for="company">Company</label>
+                            <input type="text" name="company" id="company">
+                        </li>
+                        <li class="form-email">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+                        </li>
+                        <li class="form-project-enquiry">
+                            <label for="form-project-enquiry">Project Description</label>
+                            <textarea name="form-project-enquiry" id="form-project" placeholder="Please provide information about your website requirements." required></textarea>
+                        </li>
+                        <li class="form-privacy">
+                            By submitting this form, you agree to the<a href="./privacy.html"> privacy policy</a>
+                        </li>
+                        <li class="form-submit-button">
+                            <button type="submit">Submit Project Enquiry</button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
