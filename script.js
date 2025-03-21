@@ -64,11 +64,19 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     
-            // Close modal
+    // Close modal clicking on button
     closeModalButton.addEventListener("click", function () {
         modalBackground.style.display = "none";
         modal.style.display = "none";
         body.style.overflow = "auto";
+    });
+
+    // Close modal clicking outside of form
+    modalBackground.addEventListener("click", function (event) {
+        if (event.target === modalBackground) {
+            modalBackground.style.display = "none";
+            body.style.overflow = "auto";
+        }
     });
     
 });
