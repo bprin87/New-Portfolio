@@ -7,7 +7,7 @@
     --nav-border:#3D444D;
     --text-dark:#767D86;
     --text-primary:#F0F6FC;
-    
+    --text-muted: #9198a1;
 }
 
 html {
@@ -91,10 +91,14 @@ nav {
     align-items: center;
 }
 
-.site-logo img {
-   height: 50px;
+.site-logo svg {
+   height: 55px;
    width: auto;
    display: flex;
+}
+
+.site-logo svg path {
+    fill: white;
 }
 
 .nav-menu {
@@ -216,6 +220,70 @@ nav {
 }
 
 /* ========== 
+    Footer  
+========== */
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto 5px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-site-logo {
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.footer-site-logo svg {
+    height: 25px;
+    width: auto;
+    margin-right: 10px;
+    display: flex;
+}
+
+.footer-site-logo svg path{
+    fill: var(--text-muted);
+}
+
+.footer-site-logo a:hover svg path {
+    fill: var(--text-primary);
+}
+
+footer p, .footer-links a {
+    font-size: .9rem;
+    color: var(--text-muted);
+}
+
+.footer p:hover, .footer-links a:hover {
+    color: var(--text-primary);
+}
+
+.footer-links {
+    display: flex;
+    margin-right: -15px;
+}
+
+.footer-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+/* ========== 
     Modal  
 ========== */
 
@@ -237,7 +305,7 @@ nav {
 }
 
 .enquiry-modal {
-    background: white;
+    background: #fff;
     border-radius: 15px;
     width: 90%;
     max-width: 550px;
@@ -334,7 +402,6 @@ nav {
     border-radius: 10px;
     border: none;
     background-color: var(--button-background);
-    color: #fff;
     cursor: pointer;
 }
 
@@ -364,6 +431,14 @@ nav {
 
     .hero h2, .hero h3 {
         font-size: 3rem;
+    }
+
+    .footer-container {
+        flex-direction: row;
+    }
+
+    .footer-site-logo {
+        padding-top: 0;
     }
 
 }
