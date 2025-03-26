@@ -81,3 +81,28 @@ document.addEventListener("DOMContentLoaded", function () {
     
 });
 
+
+gsap.registerPlugin(ScrollTrigger);
+
+const cards = gsap.utils.toArray(".card");
+
+let tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".work",
+    pin: true,
+    scrub: true,
+    start: "top top",
+    end: () => "+=" + cards.length * 1.5 * window.innerHeight,
+  }
+});
+
+const baseDelay = 1; // seconds to wait before first slide
+
+cards.forEach((card, i) => {
+  if (i < cards.length - 1) {
+    tl.to(card, {
+      x: "-150vw",
+      duration: 1
+    }, baseDelay + i * 1.5); // ← delay added here
+  }
+});
