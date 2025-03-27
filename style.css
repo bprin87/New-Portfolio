@@ -1,14 +1,17 @@
 :root {
     --background-dark-light:#212830;
+    --background-white: #fff;
     --body-background:#0D1117;
     --button-background: #238636;
     --button-border: #ffffff1a;
     --button-hover: #1E6B2D;
     --nav-background:#010409;
     --nav-border:#3D444D;
+    --text-black:#212830;
     --text-dark:#767D86;
-    --text-primary:#F0F6FC;
     --text-muted: #9198a1;
+    --text-primary:#F0F6FC;
+    
 }
 
 html {
@@ -31,9 +34,6 @@ body {
 }
 
 main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 50px;  
     flex: 1;
 }
 
@@ -46,10 +46,6 @@ a {
     color: inherit;
 }
 
-a:visited {
-    color: initial;
-}
-
 button {
     padding: 7px 10px;
     border-radius: 5px;
@@ -57,6 +53,17 @@ button {
     font-weight: 400;
     font-size: 1rem;
     cursor: pointer;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.scroll {
+    display: none;
 }
 
 /* ============
@@ -181,9 +188,15 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     min-height: 100vh;
     position: relative;
+}
+
+.hero-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .hero h1 {
@@ -230,16 +243,17 @@ nav {
     padding-bottom: 50px;
 }
 
-.work h2 {
+.work-heading {
     color: var(--text-primary);
     font-size: 1.5rem;
-    margin-bottom: 70px;
+    padding-bottom: 80px;
+    text-align: center;
 }
 
-.work-container {
+.card-container {
     display: flex;
     flex-wrap: nowrap;
-    width: 100%;
+    width: 80%;
     height: 80vh;
     position: relative;
     align-items: center;
@@ -247,7 +261,6 @@ nav {
 }
   
 .card {
-    /* padding: 100px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -257,25 +270,85 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+    perspective: 800px;
 }
 
 .card:nth-child(1) { z-index: 4; left: 50%; }
-.card:nth-child(2) { z-index: 3; left: calc(50% + 30px); }
-.card:nth-child(3) { z-index: 2; left: calc(50% + 60px); }
-.card:nth-child(4) { z-index: 1; left: calc(50% + 90px); }
-  
+.card:nth-child(2) { z-index: 3; left: calc(50% + 20px); top: calc(10% - 70px); }
+.card:nth-child(3) { z-index: 2; left: calc(50% + 40px); top: calc(10% - 80px);}
+.card:nth-child(4) { z-index: 1; left: calc(50% + 60px); top: calc(10% - 90px);}
+
 .card-inner {
-    background-color: white;
+    background-color: var(--background-white);
     padding: 20px;
-    width: 450px;
-    height: 500px;
+    width: 400px;
+    height: 550px;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h3 {
+    font-weight: 700;
+    color: var(--text-black);
+}
+
+.site-link {
+    background-color: var(--button-background);
+    border: 1px solid var(--button-border);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease;
+    padding: 8px;
+    border-radius: 5px;
+    color: var(--text-primary);
+    font-weight: 400;
+    font-size: .9rem;
+    cursor: pointer;
+}
+
+.site-link:hover  {
+    background-color: var(--button-hover);
+}
+
+.card-container .card:first-of-type .card-header .site-link:hover {
+    cursor: not-allowed;
   }
 
-  .next {
+.site-link a {
+    color: var(--text-primary) !important;
+}
+
+.card-content, .date {
+    padding-bottom: 20px;
+    color: var(--text-dark);
+    font-size: .9rem;
+}
+
+.date {
+    font-weight: 600;
+}
+
+.work-description {
+    font-size: .9rem;
+    line-height: 1.2;
+}
+
+.card-image img {
+    object-fit: contain;
+    height: auto;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.next {
     min-height: 100vh;
-  }
+}
 
 /* ========== 
     Footer  
@@ -460,10 +533,6 @@ footer p, .footer-links a {
 
 @media only screen and (min-width: 768px) {
 
-    main {
-        padding: 0 100px;
-    }
-
     .nav-menu {
         display: flex;
         justify-content: center;
@@ -478,7 +547,7 @@ footer p, .footer-links a {
         padding-top: 80px;
     }
 
-    .work h2 {
+    .work-heading {
         margin-top: 20px;
         font-size: 1.8rem;
     }
@@ -524,25 +593,22 @@ footer p, .footer-links a {
         height: auto;
     }
 
-    main {
-        padding: 0 150px;   
-    }
-
     .hero h2, .hero h3 {
         font-size: 4rem;
     }
 
-
-    .work {
-        max-width: 800px;
-        margin: 0 auto;
+    .work-heading {
+        font-size: 1.8rem;
     }
 
-    .work h2 {
-        font-size: 2rem;
+    .card-container {
+        width: 100%;
     }
-
  
+    .card-inner {
+        width: 450px;
+        height: 600px;
+    }
 }
    
 

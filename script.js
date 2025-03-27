@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Move each card off screen on scroll
 const cards = gsap.utils.toArray(".card");
 
 let tl = gsap.timeline({
@@ -106,3 +107,25 @@ cards.forEach((card, i) => {
     }, baseDelay + i * 1.5); // ← delay added here
   }
 });
+
+//slide header left
+let headingSlide = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".work",
+      start: "top top",
+      end: "+=400",
+      scrub: true
+    }
+});
+
+headingSlide
+  .to(".work-heading", {
+    x: "-27vw",
+    ease: "power2.out"
+  })
+  .to(".card-container", {
+    y: -60,
+    ease: "power2.ouy"
+  }, ">");
+
+
