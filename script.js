@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .from(".hero h3", { opacity: 0, y: -30, duration: 0.8, ease: "power2.out" }, "-=0.4")
       .from(".hero p", { opacity: 0, y: -30, duration: 0.8, ease: "power2.out" }, "-=0.4")
       .from(".hero button", { opacity: 0, y: -30, duration: 0.8, ease: "power2.out" }, "-=0.4");
+
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -121,11 +122,13 @@ let headingSlide = gsap.timeline({
 headingSlide
   .to(".work-heading", {
     x: "-27vw",
-    ease: "power2.out"
+    opacity: "0",
+    ease: "power2.out",
   })
   .to(".card-container", {
-    y: -60,
+    y: -90,
     ease: "power2.ouy"
   }, ">");
+
 
 

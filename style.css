@@ -116,7 +116,6 @@ nav {
 
 .nav-menu {
     display: none;
-    
 }
 
 .nav-menu li {
@@ -233,6 +232,7 @@ nav {
     padding: 10px;
 }
 
+
 /* ============
     Work
 ============ */
@@ -245,7 +245,7 @@ nav {
 
 .work-heading {
     color: var(--text-primary);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding-bottom: 80px;
     text-align: center;
 }
@@ -281,7 +281,7 @@ nav {
 
 .card-inner {
     background-color: var(--background-white);
-    padding: 20px;
+    padding: 30px;
     width: 400px;
     height: 550px;
     border-radius: 20px;
@@ -598,7 +598,7 @@ footer p, .footer-links a {
     }
 
     .work-heading {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .card-container {
@@ -606,7 +606,7 @@ footer p, .footer-links a {
     }
  
     .card-inner {
-        width: 450px;
+        width: 500px;
         height: 600px;
     }
 }
@@ -621,3 +621,4 @@ footer p, .footer-links a {
 @media only screen and (min-width: 2201px) and (min-height: 1080px) {
    
 }
+
