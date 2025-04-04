@@ -102,14 +102,59 @@ const baseDelay = 1; // seconds to wait before first slide
 
 cards.forEach((card, i) => {
   if (i < cards.length - 1) {
+    const delay = baseDelay + i * 1.5;
+
+    // Step 1: Straighten the card before sliding
     tl.to(card, {
+        rotate: 0,
+        rotateY: 0,
+        rotateZ: 0,
+        duration: 0.3,
+        ease: "power2.out"
+      }, delay - 0.3);
+  
+      // Step 2: Slide the card off screen
+      tl.to(card, {
       x: "-150vw",
-      duration: 1
-    }, baseDelay + i * 1.5); // ← delay added here
+      duration: 1,
+      ease: "power2.inOut"
+    }, delay);
   }
 });
 
-//slide header left
+// tilt cards
+gsap.utils.toArray(".card").forEach((card, i) => {
+    gsap.fromTo(card, {
+      y: i * 30,
+      scale: 1 - i * 0.03
+    }, {
+      scrollTrigger: {
+        trigger: card,
+        start: "top center+=100",
+        end: "bottom top",
+        scrub: true
+      },
+      y: 0,
+      scale: 1,
+      ease: "power2.out"
+    });
+  });
+  
+// Add ScrollTrigger animation for the final card
+gsap.to(".final-card", {
+    scrollTrigger: {
+      trigger: ".final-card",
+      start: "top 75%",
+      end: "top 50%",
+      scrub: true
+    },
+    rotate: 0,
+    rotateY: 0,
+    rotateZ: 0,
+    ease: "power2.out"
+  });
+
+// //slide header left
 let headingSlide = gsap.timeline({
     scrollTrigger: {
       trigger: ".work",
@@ -126,9 +171,28 @@ headingSlide
     ease: "power2.out",
   })
   .to(".card-container", {
-    y: -90,
-    ease: "power2.ouy"
+    y: -100,
+    ease: "power2.out"
   }, ">");
 
 
+// Wait for the DOM to fully load before running the script
+document.addEventListener("DOMContentLoaded", function () {
+    
+  // Select the element that contains all the carousel slides
+  const track = document.querySelector(".carousel-track");
+
+  // Convert the list of child elements (slides) into an array for easier manipulation
+  const slides = Array.from(track.children);
+
+  // Loop through each original slide and create a duplicate for seamless looping
+  slides.forEach((slide) => {
+      // Create a deep copy of the slide (including all child elements like SVG and text)
+      const clone = slide.cloneNode(true);
+      
+      // Append the cloned slide to the end of the carousel track
+      track.appendChild(clone);
+  });
+
+});
 
