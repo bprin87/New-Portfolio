@@ -154,26 +154,50 @@ gsap.to(".final-card", {
     ease: "power2.out"
   });
 
-// //slide header left
-let headingSlide = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".work",
-      start: "top top",
-      end: "+=400",
-      scrub: true
-    }
-});
+// slide header left
+ScrollTrigger.matchMedia({
+  // For screens greater than 768px
+  "(min-width: 769px)": function () {
+    let headingSlide = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".work",
+        start: "top top",
+        end: "+=400",
+        scrub: true
+      }
+    });
 
-headingSlide
-  .to(".work-heading", {
-    x: "-27vw",
-    opacity: "0",
-    ease: "power2.out",
-  })
-  .to(".card-container", {
-    y: -100,
-    ease: "power2.out"
-  }, ">");
+    headingSlide.to(".work-heading", {
+      x: "-27vw",
+      opacity: "0",
+      ease: "power2.out",
+    });
+
+    headingSlide.to(".card-container", {
+      y: -100,
+      ease: "power2.out"
+    }, ">");
+  },
+
+  // For screens 768px and below
+  "(max-width: 768px)": function () {
+    let headingSlide = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".work",
+        start: "top top",
+        end: "+=400",
+        scrub: true
+      }
+    });
+
+    headingSlide.to(".work-heading", {
+      x: "-27vw",
+      opacity: "0",
+      ease: "power2.out",
+    });
+    // No card movement
+  }
+});
 
 
 // Wait for the DOM to fully load before running the script
@@ -196,3 +220,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+gsap.registerPlugin(ScrollTrigger);
+
+// Animate the about section content
+gsap.from(".about-content p", {
+  scrollTrigger: {
+    trigger: ".about",      // start the animation when .about section hits viewport
+    start: "top 80%",       // trigger when top of section hits 80% from top of viewport
+    toggleActions: "play none none reverse" // play animation on scroll in, reverse on scroll out
+  },
+  opacity: 0,
+  y: 50,
+  stagger: 0.2,
+  duration: 1
+});
+
+// Animate image scale from 0 to 1 when scrolling into the about section
+gsap.from(".about-image img", {
+  scrollTrigger: {
+    trigger: ".about",
+    start: "top 80%", // when the top of the .about section hits 80% of the viewport
+    toggleActions: "play none none reverse"
+  },
+  scale: 0,
+  opacity: 0,
+  duration: 1.2,
+  ease: "power3.out"
+});
