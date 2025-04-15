@@ -95,6 +95,7 @@ let tl = gsap.timeline({
     scrub: true,
     start: "top top",
     end: () => "+=" + cards.length * 1.5 * window.innerHeight,
+   
   }
 });
 
@@ -104,7 +105,7 @@ cards.forEach((card, i) => {
   if (i < cards.length - 1) {
     const delay = baseDelay + i * 1.5;
 
-    // Step 1: Straighten the card before sliding
+//     // Step 1: Straighten the card before sliding
     tl.to(card, {
         rotate: 0,
         rotateY: 0,
@@ -121,6 +122,7 @@ cards.forEach((card, i) => {
     }, delay);
   }
 });
+
 
 // tilt cards
 gsap.utils.toArray(".card").forEach((card, i) => {
@@ -139,6 +141,8 @@ gsap.utils.toArray(".card").forEach((card, i) => {
       ease: "power2.out"
     });
   });
+
+
   
 // Add ScrollTrigger animation for the final card
 gsap.to(".final-card", {
@@ -246,4 +250,35 @@ gsap.from(".about-image img", {
   opacity: 0,
   duration: 1.2,
   ease: "power3.out"
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  gsap.from(".thank-you h1 span", {
+    opacity: 0,
+    rotationX: 90,
+    transformOrigin: "top center",
+    duration: 0.8,
+    stagger: 0.1,
+    ease: "back.out(1.7)"
+  });
+
+  gsap.from(".thank-you p span", {
+    opacity: 0,
+    rotationY: 90,
+    transformOrigin: "left center",
+    duration: 0.8,
+    stagger: 0.05,
+    delay: 0.8,
+    ease: "back.out(1.7)"
+  });
+
+  gsap.from(".thank-you button", {
+    opacity: 0,
+    rotationY: 90,
+    transformOrigin: "left center",
+    duration: 0.8,
+    stagger: 0.08,
+    delay: 1.5,
+    ease: "back.out(1.7)"
+  });
 });
